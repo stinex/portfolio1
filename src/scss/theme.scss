@@ -1,0 +1,10 @@
+.dark-content {
+    transition:  background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
+    background-color: $colorGrey;
+}
+
+.dark-content header .container_big nav .links a,
+.dark-content header .container_big .logo,
+body.dark-content {
+    color: $colorWhite;
+}
