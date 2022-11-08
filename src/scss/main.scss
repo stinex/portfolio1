@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Bold.ttf);
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Black.ttf);
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+
+body {
+    background: $colorWhite;
+    color: $colorGrey;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.75;
+    font-weight: 400;
+}
+
+.container {
+    max-width: min(calc(1340px - 30px));
+    margin-inline: auto;
+    padding: 0 15px;
+}
+
+main {
+    // padding-top: 71px;
+}
+
+.section_main {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $colorWhite;
+
+    .text {
+        .title {
+            font-weight: 700;
+            font-size: 86px;
+            line-height: 1.3em;
+            margin-bottom: 30px;
+            max-width: 900px;
+            min-height: 189px;
+            span {
+                display: block;
+                &.top {
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: $transition;
+                    will-change: transform;
+                }
+            }
+        }
+        .description {
+            font-size: 32px;
+            opacity: 1;
+            transform: translateY(0);
+            transition: $transition;
+            will-change: transform;
+
+            span {
+                color: $colorBlue;
+            }
+        }
+    }
+    .icon {
+        width: 376px;
+        height: 375px;
+        border-radius: 50%;
+        background: $colorLightBlue;
+        overflow: hidden;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transition: 0.2s cubic-bezier(0.075, 0.5, 0, 1);
+        opacity: 1;
+        flex-shrink: 0;
+
+        .man {
+            transition: $transition;
+            will-change: transform;
+        }
+    }
+}
+
+.animation .man {
+    transform: translateY(100%);
+}
+
+.animation .icon {
+    opacity: 0;
+}
+
+.animation .section_main .text .title span.top {
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.animation .section_main .text .description {
+    opacity: 0;
+    transform: translateY(-15px);
+}
