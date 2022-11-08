@@ -53,7 +53,7 @@ function App() {
                   {/* self-taught frontend developer */}
                 </div>
                 <div className="description">
-                  Hello 👋, I`m Vladislav Aparin / <span>male</span>, 24!
+                  Hello 👋, I`m Vladislav Aparin / <span>male</span>, 24
                 </div>
               </div>
 
