@@ -40,23 +40,20 @@ function App() {
 
   return (
     <>
-
-
       <Loading animation={animation} loading={loading} />
-
       <div className={!animation ? 'animation' : ''}>
         <Header />
         <main>
           <div className="container">
             <section className="section_main">
               <div className="text">
-                <div className="title" >
-                  <span className="top"> self-taught</span>
+                <div className="title">
+                  <span className="top">self-taught</span>
                   <span className="bottom" ref={text}></span>
                   {/* self-taught frontend developer */}
                 </div>
                 <div className="description">
-                  Hello 👋, I`m Vladislav Aparin / <span>male</span>, 24
+                  Hello 👋, I`m Vladislav Aparin / <span>male</span>, 24!
                 </div>
               </div>
 
