@@ -72,6 +72,9 @@ main {
                     transition: $transition;
                     will-change: transform;
                 }
+                &.bottom {
+                    transition: $transition;
+                }
             }
         }
         .description {
