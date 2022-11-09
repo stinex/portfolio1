@@ -1,9 +1,6 @@
-import { useState } from 'react';
 import { ThemeContext, themes } from '../contexts/ThemeContext';
 
 const Header = () => {
-
-    const [darkMode, setDarkMode] = useState(true);
     return (
         <header>
             <div className="container_big">
@@ -18,12 +15,17 @@ const Header = () => {
                         <a href="#4">&#60; contact /&#62;</a>
                     </div>
                     <ThemeContext.Consumer>
-                        {({ changeTheme }) => (
-                            <div className="switch" onClick={() => {
-                                setDarkMode(!darkMode);
-                                changeTheme(darkMode ? themes.dark : themes.light);
-                            }}>
-                                <input type="checkbox" name="link1" id="link1" />
+                        {({ changeTheme, setDarkMode, darkMode }) => (
+                            <div className="switch" >
+                                <input
+                                    type="checkbox"
+                                    checked={darkMode}
+                                    onChange={() => {
+                                        setDarkMode(!darkMode)
+                                        changeTheme(!darkMode ? themes.dark : themes.light);
+                                    }}
+                                    name="link1"
+                                    id="link1" />
                                 <label htmlFor="link1"></label>
                             </div>
                         )}
