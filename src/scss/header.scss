@@ -1,10 +1,13 @@
 header {
     position: fixed;
     width: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
 
     .container_big {
         max-width: min(calc(1720px - 30px));
-        padding: 15px 15px 0;
+        padding: 15px;
         margin-inline: auto;
         display: flex;
         align-items: center;

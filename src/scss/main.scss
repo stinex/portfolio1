@@ -31,7 +31,7 @@ a {
 }
 
 body {
-    background: $colorWhite;
+    background: linear-gradient(180deg, #fff, #ecedf2);
     color: $colorGrey;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
@@ -84,9 +84,9 @@ main {
             transition: $transition;
             will-change: transform;
 
-            span {
-                color: $colorBlue;
-            }
+            // span {
+            //     color: $colorBlue;
+            // }
         }
     }
     .icon {
@@ -125,4 +125,50 @@ main {
 .animation .section_main .text .description {
     opacity: 0;
     transform: translateY(-15px);
+}
+
+.section_title {
+    font-weight: 700;
+    font-size: 66px;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 130px;
+        height: 2px;
+        background: $colorBlue;
+    }
+}
+
+.section_skills {
+    padding: 100px 0;
+    .skills_block {
+        max-width: 700px;
+        margin-left: auto;
+        .skill {
+            margin-bottom: 50px;
+            .skills_title {
+                font-weight: 700;
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+            .skills_block {
+                display: grid;
+                grid-auto-flow: column dense;
+                grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+                .skills {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.section_experience {
+    padding: 100px 0;
+    height: calc(100vh);
 }

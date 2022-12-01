@@ -1,8 +1,10 @@
 .dark-content {
     transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
-    background-color: $colorGrey;
+    background: $colorGrey;
 }
-
+.dark-content header {
+    background: rgb(54 54 54 / 75%);
+}
 .dark-content .loading .loading_wrapper .loading_progress .block.bottom,
 .dark-content .loading .loading_wrapper .loading_progress .block.top {
     transition: auto;
@@ -33,4 +35,20 @@
 }
 .dark-content .loading_wrapper .loading_progress .block.bottom {
     box-shadow: 0px -2px 2px rgb(33 102 235 / 20%);
+}
+
+.dark-content footer {
+    background: $colorLightGrey;
+    color: $colorGrey;
+    transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
+}
+.dark-content footer span {
+    &::after {
+        background: $colorGrey;
+        transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
+    }
+}
+.dark-content footer svg path {
+    fill: $colorGrey;
+    transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
 }
