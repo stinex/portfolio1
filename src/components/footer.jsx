@@ -8,13 +8,13 @@ const Footer = () => {
     return (
         <footer>
             <span>
-                Ⓒ VLADISLAV APARIN 2022
+                Ⓒ VLAD APARIN 2022
             </span>
             <div className="socials">
-                <a href="https://www.facebook.com/aparin.vladislav27" target='_blank' rel="noreferrer"><FacebookIcon /></a>
-                <a href="https://github.com/stinex" target='_blank' rel="noreferrer"><GitHubIcon /></a>
-                <a href="https://www.instagram.com/vlad_aparin/" target='_blank' rel="noreferrer"><InstagramIcon /></a>
-                <a href="https://www.linkedin.com/in/vladislav-a-9597b3253/" target='_blank' rel="noreferrer"><LinkedinIcon /></a>
+                <a href="https://www.facebook.com/aparin.vladislav27" target='_blank' rel="noreferrer"><FacebookIcon color='#F9F9F9'/></a>
+                <a href="https://github.com/stinex" target='_blank' rel="noreferrer"><GitHubIcon color='#F9F9F9'/></a>
+                <a href="https://www.instagram.com/vlad_aparin/" target='_blank' rel="noreferrer"><InstagramIcon color='#F9F9F9'/></a>
+                <a href="https://www.linkedin.com/in/vladislav-a-9597b3253/" target='_blank' rel="noreferrer"><LinkedinIcon color='#F9F9F9'/></a>
             </div>
         </footer>
     )

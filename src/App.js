@@ -1,5 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useRef, useContext } from "react"
+import FacebookIcon from './img/Facebook'
+import GitHubIcon from './img/GitHub'
+import InstagramIcon from './img/Instagram'
+import LinkedinIcon from './img/Linkedin'
 
 import Footer from './components/footer'
 import Header from './components/header'
@@ -52,6 +56,21 @@ function App() {
                 </div>
                 <div className="description">
                   {langs.title}
+                </div>
+
+                <div className="socials">
+                  <a href="https://www.linkedin.com/in/vladislav-a-9597b3253/">
+                    <LinkedinIcon color='#363636' />
+                  </a>
+                  <a href="https://www.facebook.com/aparin.vladislav27">
+                    <FacebookIcon color='#363636' />
+                  </a>
+                  <a href="https://github.com/stinex">
+                    <GitHubIcon color='#363636' />
+                  </a>
+                  <a href="https://www.instagram.com/vlad_aparin/">
+                    <InstagramIcon color='#363636' />
+                  </a>
                 </div>
               </div>
               <div className="icon">

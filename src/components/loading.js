@@ -7,7 +7,7 @@ const Loading = ({ animation, loading }) => {
                         <div className="block top">
                         </div>
                         <div className="author">
-                            © {new Date().getFullYear()} | Vladislav Aparin
+                            © {new Date().getFullYear()} | Vlad Aparin
                         </div>
                         <div className="progress"></div>
                         <div className="block bottom">

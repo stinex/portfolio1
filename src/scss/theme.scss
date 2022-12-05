@@ -52,3 +52,8 @@
     fill: $colorGrey;
     transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
 }
+
+.dark-content .section_main .text .socials a svg path {
+    fill: $colorWhite;
+    transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
+}
