@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.d06d4fe1.css",
-    "main.js": "/portfolio/static/js/main.0bc432d1.js",
+    "main.css": "/portfolio/static/css/main.4328c599.css",
+    "main.js": "/portfolio/static/js/main.f2b90bf6.js",
     "static/media/Montserrat-Medium.ttf": "/portfolio/static/media/Montserrat-Medium.c86e3b9010ff63c99166.ttf",
     "static/media/Montserrat-Bold.ttf": "/portfolio/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
     "static/media/Montserrat-Regular.ttf": "/portfolio/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
@@ -12,11 +12,11 @@
     "static/media/sun.svg": "/portfolio/static/media/sun.bd61d1fbe0e2c1ee1c00.svg",
     "static/media/moon.svg": "/portfolio/static/media/moon.8eaa8ecdb0a5e3550644.svg",
     "index.html": "/portfolio/index.html",
-    "main.d06d4fe1.css.map": "/portfolio/static/css/main.d06d4fe1.css.map",
-    "main.0bc432d1.js.map": "/portfolio/static/js/main.0bc432d1.js.map"
+    "main.4328c599.css.map": "/portfolio/static/css/main.4328c599.css.map",
+    "main.f2b90bf6.js.map": "/portfolio/static/js/main.f2b90bf6.js.map"
   },
   "entrypoints": [
-    "static/css/main.d06d4fe1.css",
-    "static/js/main.0bc432d1.js"
+    "static/css/main.4328c599.css",
+    "static/js/main.f2b90bf6.js"
   ]
 }
