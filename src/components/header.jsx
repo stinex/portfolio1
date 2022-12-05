@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import { LanguageContext } from '../contexts/LanguageContext';
 import { ThemeContext, themes } from '../contexts/ThemeContext';
 
+
 const Header = () => {
+    const { langs, setEng, eng } = useContext(LanguageContext);
+
     return (
         <header>
             <div className="container_big">
@@ -9,10 +14,10 @@ const Header = () => {
                 </a>
                 <nav>
                     <div className="links">
-                        <a href="#1">&#60; skills /&#62;</a>
-                        <a href="#2">&#60; experience /&#62;</a>
-                        <a href="#3">&#60; about /&#62;</a>
-                        <a href="#4">&#60; contact /&#62;</a>
+                        <a href="#1">&#60; {langs.header_links_one} /&#62;</a>
+                        <a href="#2">&#60; {langs.header_links_two} /&#62;</a>
+                        <a href="#3">&#60; {langs.header_links_three} /&#62;</a>
+                        <a href="#4">&#60; {langs.header_links_four} /&#62;</a>
                     </div>
                     <ThemeContext.Consumer>
                         {({ changeTheme, setDarkMode, darkMode }) => (
@@ -29,9 +34,10 @@ const Header = () => {
                                 <label htmlFor="link1"></label>
                             </div>
                         )}
+
                     </ThemeContext.Consumer>
-                    <div className="language">
-                        RU
+                    <div className="language" onClick={() => setEng(!eng)}>
+                        {langs.language}
                     </div>
                 </nav>
             </div>

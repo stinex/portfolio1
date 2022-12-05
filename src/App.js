@@ -1,29 +1,30 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef, useContext } from "react"
 
 import Footer from './components/footer'
 import Header from './components/header'
 import Loading from "./components/loading"
 import Man from './img/man.png'
+import { LanguageContext } from './contexts/LanguageContext';
 
 function App() {
-
   const [animation, setAnimation] = useState(false)
   const [loading, setLoading] = useState(false)
   const text = useRef(null)
   const [textCount, setTextCount] = useState()
+  const { langs } = useContext(LanguageContext);
+  const mainText = langs.decription_bottom
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     setTimeout(() => setLoading(!loading), 1000)
+    text.current.innerHTML = ''
   }, []);
 
   useEffect(() => {
     if (loading)
       setTimeout(() => { setAnimation(!animation); document.body.style = ''; setTextCount(0) }, 2100)
   }, [loading]);
-
-  const mainText = 'frontend developer'
 
   useEffect(() => {
     if (textCount >= 0) {
@@ -46,12 +47,11 @@ function App() {
             <section className="section_main">
               <div className="text">
                 <div className="title">
-                  <span className="top">self-taught</span>
-                  <span className="bottom" ref={text}></span>
-                  {/* self-taught frontend developer */}
+                  <span className="top">{langs.decription_top}</span>
+                  <span className="bottom" ref={text}>{langs.decription_bottom}</span>
                 </div>
                 <div className="description">
-                  Hello 👋, I`m Vlad Aparin
+                  {langs.title}
                 </div>
               </div>
               <div className="icon">
@@ -60,12 +60,12 @@ function App() {
             </section>
             <section className="section_skills">
               <div className="section_title">
-                &#60; My skills /&#62;
+                &#60; {langs.my_skills} /&#62;
               </div>
               <div className="skills_block">
                 <div className="skill">
                   <div className="skills_title">
-                    Hard skills
+                    {langs.hard_skills}
                   </div>
                   <div className="skills_block">
                     <div className="skills">HTML</div>
@@ -83,7 +83,7 @@ function App() {
                 </div>
                 <div className="skill">
                   <div className="skills_title">
-                    Software / Tools
+                    {langs.tools_skills}
                   </div>
                   <div className="skills_block">
                     <div className="skills">GitHub</div>
@@ -96,25 +96,24 @@ function App() {
                 </div>
                 <div className="skill">
                   <div className="skills_title">
-                    Soft skills
+                    {langs.soft_skills}
                   </div>
                   <div className="skills_block">
-                    <div className="skills">Punctual</div>
-                    <div className="skills">Self-direction</div>
-                    <div className="skills">Disciplined</div>
-                    <div className="skills">Communicable</div>
-                    <div className="skills">Team player</div>
-                    <div className="skills">Stress resistant</div>
+                    <div className="skills">{langs.hard_skills_one}</div>
+                    <div className="skills">{langs.hard_skills_two}</div>
+                    <div className="skills">{langs.hard_skills_three}</div>
+                    <div className="skills">{langs.hard_skills_four}</div>
+                    <div className="skills">{langs.hard_skills_five}</div>
+                    <div className="skills">{langs.hard_skills_six}</div>
                   </div>
                 </div>
               </div>
             </section>
             <section className="section_experience">
               <div className="section_title">
-                &#60; Experience /&#62;
+                &#60; {langs.experience} /&#62;
               </div>
               <div className="experience_block">
-
               </div>
             </section>
           </div>
