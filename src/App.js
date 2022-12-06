@@ -17,7 +17,7 @@ function App() {
   const text = useRef(null)
   const [textCount, setTextCount] = useState()
   const { langs } = useContext(LanguageContext);
-  const mainText = langs.decription_bottom
+
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
@@ -27,10 +27,18 @@ function App() {
 
   useEffect(() => {
     if (loading)
-      setTimeout(() => { setAnimation(!animation); document.body.style = ''; setTextCount(0) }, 2100)
+      setTimeout(() => { setAnimation(!animation); document.body.style = ''; setTextCount(0); }, 2100)
   }, [loading]);
 
   useEffect(() => {
+    if (text.current.innerHTML !== '') {
+      text.current.innerHTML = ''
+      setTextCount(0)
+    }
+  }, [langs])
+
+  useEffect(() => {
+    let mainText = langs.decription_bottom
     if (textCount >= 0) {
       setTimeout(() => {
         if (textCount < mainText.length) {
@@ -52,7 +60,7 @@ function App() {
               <div className="text">
                 <div className="title">
                   <span className="top">{langs.decription_top}</span>
-                  <span className="bottom" ref={text}>{langs.decription_bottom}</span>
+                  <span className="bottom" ref={text}></span>
                 </div>
                 <div className="description">
                   {langs.title}
