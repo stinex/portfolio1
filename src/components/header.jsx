@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { LanguageContext } from '../contexts/LanguageContext';
 import { ThemeContext, themes } from '../contexts/ThemeContext';
 
-
 const Header = () => {
     const { langs, setEng, eng } = useContext(LanguageContext);
 
@@ -34,7 +33,6 @@ const Header = () => {
                                 <label htmlFor="link1"></label>
                             </div>
                         )}
-
                     </ThemeContext.Consumer>
                     <div className="language" onClick={() => setEng(!eng)}>
                         {langs.language}

@@ -3,7 +3,6 @@ import GitHubIcon from '../img/GitHub'
 import InstagramIcon from '../img/Instagram'
 import LinkedinIcon from '../img/Linkedin'
 
-
 const Footer = () => {
     return (
         <footer>

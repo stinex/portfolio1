@@ -4,7 +4,6 @@ import FacebookIcon from './img/Facebook'
 import GitHubIcon from './img/GitHub'
 import InstagramIcon from './img/Instagram'
 import LinkedinIcon from './img/Linkedin'
-
 import Footer from './components/footer'
 import Header from './components/header'
 import Loading from "./components/loading"

@@ -1,10 +1,13 @@
+// variables
 @import "variables.scss";
 
+// theme
 @import "theme.scss";
 
+// basic
 @import "loading.scss";
-
 @import "header.scss";
 @import "footer.scss";
 
+// components
 @import "main.scss";

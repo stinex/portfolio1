@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { createContext } from "react";
 import Cookies from 'js-cookie'
-
 import EN from '../en.json';
 import RU from '../ru.json';
 
@@ -30,7 +29,6 @@ export const LanguageProvider = ({ children }) => {
             setEng(false)
         }
     }, [])
-
 
     useEffect(() => {
         switch (eng) {
