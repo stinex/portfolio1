@@ -6,6 +6,20 @@
 a {
     text-decoration: none;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $colorBlue;
+}
+
 @font-face {
     font-family: "Poppins";
     src: url(../fonts/Poppins-Bold.ttf);
@@ -145,7 +159,6 @@ main {
                 animation-play-state: running;
                 will-change: contents;
 
-
                 &:nth-child(1) {
                     animation-delay: 0.7s;
                 }
@@ -156,9 +169,8 @@ main {
                     animation-delay: 0.8s;
                 }
                 &:nth-child(4) {
-                    animation-delay:  0.85s;
+                    animation-delay: 0.85s;
                 }
-
             }
         }
     }
@@ -215,7 +227,7 @@ main {
 .section_title {
     font-weight: 700;
     font-size: 66px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -254,8 +266,82 @@ main {
 }
 
 .section_experience {
-    padding: 100px 0;
-    height: calc(100vh);
+    padding: 100px 0 200px;
+    // height: calc(100vh);
+
+    .experience_blocks {
+        max-width: 960px;
+        margin-left: auto;
+
+        .item {
+            display: flex;
+            gap: 50px;
+
+            &:first-child {
+                & .experience_block.text {
+                    &::after {
+                        box-shadow: 0px 0px 10px $colorBlue;
+                    }
+                }
+            }
+
+            &:last-child {
+                & .experience_block.text {
+                    padding-bottom: 0;
+                }
+            }
+            .experience_block {
+                &.date {
+                    flex-shrink: 0;
+                    min-width: 140px;
+                    line-height: 1em;
+                    font-size: 16px;
+                    text-align: right;
+                }
+
+                &.text {
+                    position: relative;
+                    padding-left: 66px;
+                    padding-bottom: 60px;
+
+                    &::before,
+                    &::after {
+                        position: absolute;
+                        display: block;
+                        content: "";
+                        top: 0;
+                        left: 0;
+                    }
+                    &::before {
+                        width: 2px;
+                        background: $colorBlue;
+                        height: 100%;
+                        left: 7px;
+                    }
+
+                    &::after {
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50%;
+                        background: $colorBlue;
+                        box-shadow: 0px 0px 5px $colorBlue;
+                    }
+
+                    .title {
+                        font-size: 22px;
+                        font-weight: 500;
+                        line-height: 1em;
+                        margin-bottom: 15px;
+                    }
+
+                    .description {
+                        font-size: 18px;
+                        line-height: 1.3em;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .animation .section_main .text .socials::after {

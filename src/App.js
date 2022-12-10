@@ -48,6 +48,8 @@ function App() {
     }
   }, [textCount])
 
+
+
   return (
     <>
       <Loading animation={animation} loading={loading} />
@@ -139,7 +141,42 @@ function App() {
               <div className="section_title">
                 &#60; {langs.experience} /&#62;
               </div>
-              <div className="experience_block">
+              <div className="experience_blocks">
+                <div className="item">
+                  <div className="experience_block date">
+                    2021 — Present
+                  </div>
+                  <div className="experience_block text">
+                    <div className="title">Ergonova / Frontend Developer / Full-time </div>
+                    <div className="description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorem asperiores ea dolor doloribus adipisci vitae, quidem quisquam suscipit ipsum esse velit possimus quibusdam earum repudiandae ratione molestias ut illum!
+                    </div>
+                  </div>
+                </div>
+
+                <div className="item">
+                  <div className="experience_block date">
+                    2019 — Present
+                  </div>
+                  <div className="experience_block text">
+                    <div className="title">SIA Berry White / Frontend Developer / Freelance</div>
+                    <div className="description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorem asperiores ea dolor doloribus adipisci vitae, quidem quisquam suscipit ipsum esse velit possimus quibusdam earum repudiandae ratione molestias ut illum!
+                    </div>
+                  </div>
+                </div>
+
+                <div className="item">
+                  <div className="experience_block date">
+                    2021 — 2021
+                  </div>
+                  <div className="experience_block text">
+                    <div className="title">INDEX / Frontend Developer / Full-time</div>
+                    <div className="description">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti dolorem asperiores ea dolor doloribus adipisci vitae, quidem quisquam suscipit ipsum esse velit possimus quibusdam earum repudiandae ratione molestias ut illum!
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
           </div>

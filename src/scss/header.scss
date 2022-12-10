@@ -64,7 +64,7 @@ header {
                 }
             }
             .switch {
-                margin-right: 12px;
+                margin-right: 20px;
                 position: relative;
                 width: 44px;
                 height: 24px;
@@ -114,6 +114,15 @@ header {
             .language {
                 cursor: pointer;
                 position: relative;
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                font-weight: 500;
+
+                svg {
+                    transition: $transition;
+                    fill: $colorGrey;
+                }
 
                 &::after {
                     content: "";
@@ -127,8 +136,23 @@ header {
                     transition: $transition;
                     will-change: transform;
                 }
+
+                &.animation {
+                    svg {
+                        animation: animationRotate $transition;
+                    }
+                }
             }
         }
+    }
+}
+
+@keyframes animationRotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(600deg);
     }
 }
 

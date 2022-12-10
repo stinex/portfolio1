@@ -14,7 +14,9 @@
 .dark-content .loading_wrapper .loading_progress .block.top {
     background-color: $colorGrey;
 }
-
+.dark-content header .container_big nav .language svg {
+    fill: $colorWhite;
+}
 .dark-content,
 .dark-content header .container_big nav .links a,
 .dark-content header .container_big .logo,
