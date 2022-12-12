@@ -32,7 +32,8 @@ function App() {
   useEffect(() => {
     if (text.current.innerHTML !== '') {
       text.current.innerHTML = ''
-      setTextCount(0)
+      // setTextCount(0)
+      text.current.innerHTML = langs.decription_bottom
     }
   }, [langs])
 
@@ -47,8 +48,6 @@ function App() {
       }, 60);
     }
   }, [textCount])
-
-
 
   return (
     <>
@@ -88,7 +87,7 @@ function App() {
             </section>
             <section className="section_skills">
               <div className="section_title">
-                &#60; {langs.my_skills} /&#62;
+                &#60; 🧠 {langs.my_skills} /&#62;
               </div>
               <div className="skills_block">
                 <div className="skill">
@@ -139,7 +138,7 @@ function App() {
             </section>
             <section className="section_experience">
               <div className="section_title">
-                &#60; {langs.experience} /&#62;
+                &#60; 👨🏽‍💻 {langs.experience} /&#62;
               </div>
               <div className="experience_blocks">
                 <div className="item">
