@@ -297,6 +297,23 @@ main {
                     line-height: 1em;
                     font-size: 16px;
                     text-align: right;
+
+                    span {
+                        position: relative;
+                        display: block;
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 0px;
+                            height: 100%;
+                            background: $colorGrey;
+                            left: 0;
+                            top: 0;
+                            transition: $transition;
+                            will-change: transform;
+                        }
+                    }
                 }
 
                 &.text {
@@ -328,17 +345,74 @@ main {
                     }
 
                     .title {
+                        padding: 1px;
                         font-size: 22px;
                         font-weight: 500;
                         line-height: 1em;
                         margin-bottom: 15px;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 0px;
+                            height: 100%;
+                            background: $colorGrey;
+                            left: 0;
+                            top: 0;
+                            transition: $transition;
+                            will-change: transform;
+                        }
                     }
 
                     .description {
                         font-size: 18px;
                         line-height: 1.3em;
+                        position: relative;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 0px;
+                            height: 100%;
+                            background: $colorGrey;
+                            left: 0;
+                            top: 0;
+                            transition: $transition;
+                            will-change: transform;
+                        }
                     }
                 }
+            }
+
+            &.animation-scroll {
+                /*  */
+                .experience_block {
+                    &.date {
+                        span {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    &.text {
+                        .title {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+
+                        .description {
+                            &::after {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                /*  */
             }
         }
     }
@@ -351,3 +425,8 @@ main {
     transform: translateY(-100%);
     animation-play-state: paused;
 }
+
+// body {
+//     position: fixed;
+//     width: 100%;
+// }

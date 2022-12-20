@@ -49,10 +49,55 @@ function App() {
     }
   }, [textCount])
 
+  //  Hide and show header depends on scroll
+  let lastScrollTop = 0;
+  window.onscroll = onScroll;
+
+
+  let animationScroll = document.querySelectorAll('.animation-scroll')
+
+  function onScroll() {
+    let top = window.pageYOffset;
+    if (top === 0)
+      return document.querySelector('header').classList.remove('scroll')
+
+    if (window.scrollY >= document.querySelector('header').clientHeight && lastScrollTop > top)
+      document.querySelector('header').classList.add('scroll')
+
+    if (lastScrollTop > top) {
+      document.querySelector('header').classList.remove('scroll-down')
+    } else if (lastScrollTop < top) {
+      if (window.scrollY >= document.querySelector('header').clientHeight) {
+        document.querySelector('header').classList.add('scroll-down')
+      }
+    }
+    lastScrollTop = top;
+
+    // console.log(animationScroll)
+
+    if (animationScroll)
+      for (let i = 0; i < animationScroll.length; i++) {
+        let positionElement = animationScroll[i].getBoundingClientRect()
+        if (
+          (positionElement.top + positionElement.height > 0) && // Елемент ниже верхней границы
+          (window.innerHeight - (positionElement.top + (positionElement.height / 2)) > 0) && // Выше нижней
+          (positionElement.left + positionElement.width > 0) && // Правее левой
+          (window.innerWidth - positionElement.left > 0)// Левее правой
+        ) {
+          animationScroll[i].classList.remove('animation-scroll')
+        }
+
+
+      }
+
+  }
+  // window.addEventListener("wheel", () => {
+  //   console.log(document.body.clientHeight, window.pageYOffset)
+  // });
   return (
     <>
       <Loading animation={animation} loading={loading} />
-      <div className={!animation ? 'animation' : ''}>
+      <div className={!animation ? 'wrapper animation' : 'wrapper'}>
         <Header />
         <main>
           <div className="container">
@@ -141,9 +186,9 @@ function App() {
                 &#60; 👨🏽‍💻 {langs.experience} /&#62;
               </div>
               <div className="experience_blocks">
-                <div className="item">
+                <div className="item animation-scroll">
                   <div className="experience_block date">
-                    2021 — Present
+                    <span> 2021 — Present</span>
                   </div>
                   <div className="experience_block text">
                     <div className="title">Ergonova / Frontend Developer / Full-time </div>
@@ -153,9 +198,9 @@ function App() {
                   </div>
                 </div>
 
-                <div className="item">
+                <div className="item animation-scroll">
                   <div className="experience_block date">
-                    2019 — Present
+                    <span> 2019 — Present</span>
                   </div>
                   <div className="experience_block text">
                     <div className="title">SIA Berry White / Frontend Developer / Freelance</div>
@@ -165,9 +210,9 @@ function App() {
                   </div>
                 </div>
 
-                <div className="item">
+                <div className="item animation-scroll">
                   <div className="experience_block date">
-                    2021 — 2021
+                    <span>  2021 — 2021</span>
                   </div>
                   <div className="experience_block text">
                     <div className="title">INDEX / Frontend Developer / Full-time</div>
