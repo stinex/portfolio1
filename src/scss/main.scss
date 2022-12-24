@@ -328,6 +328,8 @@ main {
                         content: "";
                         top: 0;
                         left: 0;
+                        transition: $transition;
+                        will-change: transform;
                     }
                     &::before {
                         width: 2px;
@@ -424,6 +426,24 @@ main {
 .animation .section_main .text .socials a {
     transform: translateY(-100%);
     animation-play-state: paused;
+}
+.section_experience {
+    .experience_blocks {
+        .item {
+            &.animation-scroll {
+                .experience_block {
+                    &.text {
+                        &::before {
+                            height: 0%;
+                        }
+                        &::after {
+                            transform: scale(0);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // body {
