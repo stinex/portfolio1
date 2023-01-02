@@ -7,7 +7,7 @@ const Footer = () => {
     return (
         <footer>
             <span>
-                Ⓒ VLAD APARIN 2022
+                Ⓒ VLAD APARIN {new Date().getFullYear()}
             </span>
             <div className="socials">
                 <a href="https://www.facebook.com/aparin.vladislav27" target='_blank' rel="noreferrer"><FacebookIcon color='#F9F9F9'/></a>

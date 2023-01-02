@@ -13,7 +13,7 @@
 .dark-content .loading_wrapper .loading_progress .block.top {
     background-color: $colorGrey;
 }
-.dark-content header .container_big nav .language svg {
+.dark-content header .container_big nav .language svg path {
     fill: $colorWhite;
 }
 .dark-content,
@@ -59,7 +59,7 @@
     transition: background-color 0.2s cubic-bezier(0.075, 0.5, 0, 1), 0.2s;
 }
 
-
-.dark-content .section_skills,  .dark-content .section_experience{
+.dark-content .section_skills,
+.dark-content .section_experience {
     background: $colorGrey;
 }

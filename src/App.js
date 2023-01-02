@@ -8,7 +8,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Loading from "./components/Loading"
 import Man from './img/man.png'
-import { LanguageContext } from './contexts/LanguageContext';
+import { LanguageContext } from './contexts/LanguageContext'
 import Particle from "./components/Particle"
 
 function App() {
@@ -16,13 +16,25 @@ function App() {
   const [loading, setLoading] = useState(false)
   const text = useRef(null)
   const [textCount, setTextCount] = useState()
-  const { langs } = useContext(LanguageContext);
+  const { langs } = useContext(LanguageContext)
 
 
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     setTimeout(() => setLoading(!loading), 1000)
     text.current.innerHTML = ''
+
+    const anchors = document.querySelectorAll('a[href*="#"]')
+    for (let anchor of anchors) {
+      anchor.addEventListener('click', (e) => {
+        e.preventDefault()
+        document.getElementById(anchor.getAttribute('href').slice(1)).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      })
+    }
+
   }, []);
 
   useEffect(() => {
@@ -52,12 +64,12 @@ function App() {
 
   //  Hide and show header depends on scroll
   let lastScrollTop = 0;
+
+
   window.onscroll = onScroll;
 
-
-  let animationScroll = document.querySelectorAll('.animation-scroll')
-
   function onScroll() {
+    let animationScroll = document.querySelectorAll('.animation-scroll')
     let top = window.pageYOffset;
     if (top === 0)
       return document.querySelector('header').classList.remove('scroll')
@@ -73,7 +85,6 @@ function App() {
       }
     }
     lastScrollTop = top;
-
     if (animationScroll)
       for (let i = 0; i < animationScroll.length; i++) {
         let positionElement = animationScroll[i].getBoundingClientRect()
@@ -85,10 +96,7 @@ function App() {
         ) {
           animationScroll[i].classList.remove('animation-scroll')
         }
-
-
       }
-
   }
   return (
     <>
@@ -128,7 +136,7 @@ function App() {
               </div>
             </section>
           </div>
-          <section className="section_skills">
+          <section className="section_skills" id="1">
             <div className="container">
               <div className="section_title">
                 &#60; 🧠 {langs.my_skills} /&#62;
@@ -181,7 +189,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section className="section_experience">
+          <section className="section_experience" id="2">
             <div className="container">
               <div className="section_title">
                 &#60; 👨🏽‍💻 {langs.experience} /&#62;

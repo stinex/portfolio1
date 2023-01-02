@@ -4,12 +4,11 @@ import { loadFull } from "tsparticles";
 import { ThemeContext } from '../contexts/ThemeContext';
 const Particle = () => {
     const particlesInit = useCallback(async (engine) => {
-        console.log(engine);
+
         await loadFull(engine);
     }, []);
 
     const particlesLoaded = useCallback(async (container) => {
-        await console.log(container);
     }, []);
 
     return (
@@ -94,7 +93,7 @@ const Particle = () => {
                                 "blink": false,
                                 "color": !darkMode ? '#363636' : '#f9f9f9',
                                 "consent": false,
-                                "distance": 30,
+                                "distance": 50,
                                 "enable": true,
                                 "opacity": 0.4,
                                 "width": 1
