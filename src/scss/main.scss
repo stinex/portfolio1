@@ -69,7 +69,7 @@ a {
 }
 
 body {
-    background: linear-gradient(180deg, #fff, #ecedf2);
+    background: $colorLightGrey;
     color: $colorGrey;
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
@@ -83,16 +83,13 @@ body {
     padding: 0 15px;
 }
 
-main {
-    // padding-top: 71px;
-}
 
 .section_main {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // background: $colorWhite;
+    position: relative;
 
     .text {
         .title {
@@ -243,6 +240,7 @@ main {
 
 .section_skills {
     padding: 100px 0;
+    background:$colorLightGrey;
     .skills_block {
         max-width: 700px;
         margin-left: auto;
@@ -267,7 +265,7 @@ main {
 
 .section_experience {
     padding: 100px 0 200px;
-    // height: calc(100vh);
+    background: $colorLightGrey;
 
     .experience_blocks {
         max-width: 960px;
@@ -445,8 +443,3 @@ main {
         }
     }
 }
-
-// body {
-//     position: fixed;
-//     width: 100%;
-// }

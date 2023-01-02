@@ -4,11 +4,12 @@ import FacebookIcon from './img/Facebook'
 import GitHubIcon from './img/GitHub'
 import InstagramIcon from './img/Instagram'
 import LinkedinIcon from './img/Linkedin'
-import Footer from './components/footer'
-import Header from './components/header'
-import Loading from "./components/loading"
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Loading from "./components/Loading"
 import Man from './img/man.png'
 import { LanguageContext } from './contexts/LanguageContext';
+import Particle from "./components/Particle"
 
 function App() {
   const [animation, setAnimation] = useState(false)
@@ -73,16 +74,14 @@ function App() {
     }
     lastScrollTop = top;
 
-    // console.log(animationScroll)
-
     if (animationScroll)
       for (let i = 0; i < animationScroll.length; i++) {
         let positionElement = animationScroll[i].getBoundingClientRect()
         if (
-          (positionElement.top + positionElement.height > 0) && // Елемент ниже верхней границы
-          (window.innerHeight - (positionElement.top + (positionElement.height / 2)) > 0) && // Выше нижней
-          (positionElement.left + positionElement.width > 0) && // Правее левой
-          (window.innerWidth - positionElement.left > 0)// Левее правой
+          (positionElement.top + positionElement.height > 0) &&
+          (window.innerHeight - (positionElement.top + (positionElement.height / 2)) > 0) &&
+          (positionElement.left + positionElement.width > 0) &&
+          (window.innerWidth - positionElement.left > 0)
         ) {
           animationScroll[i].classList.remove('animation-scroll')
         }
@@ -91,9 +90,6 @@ function App() {
       }
 
   }
-  // window.addEventListener("wheel", () => {
-  //   console.log(document.body.clientHeight, window.pageYOffset)
-  // });
   return (
     <>
       <Loading animation={animation} loading={loading} />
@@ -102,6 +98,7 @@ function App() {
         <main>
           <div className="container">
             <section className="section_main">
+              <Particle />
               <div className="text">
                 <div className="title">
                   <span className="top">{langs.decription_top}</span>
@@ -130,7 +127,9 @@ function App() {
                 <img src={Man} alt="" className="man" />
               </div>
             </section>
-            <section className="section_skills">
+          </div>
+          <section className="section_skills">
+            <div className="container">
               <div className="section_title">
                 &#60; 🧠 {langs.my_skills} /&#62;
               </div>
@@ -180,8 +179,10 @@ function App() {
                   </div>
                 </div>
               </div>
-            </section>
-            <section className="section_experience">
+            </div>
+          </section>
+          <section className="section_experience">
+            <div className="container">
               <div className="section_title">
                 &#60; 👨🏽‍💻 {langs.experience} /&#62;
               </div>
@@ -222,11 +223,11 @@ function App() {
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
+            </div>
+          </section>
         </main>
         <Footer />
-      </div>
+      </div >
     </>
   );
 }

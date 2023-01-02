@@ -2,10 +2,9 @@ header {
     position: absolute;
     width: 100%;
     z-index: 1;
-    background: rgba(255, 255, 255, 0.2);
+    background: $colorLightGrey;
     backdrop-filter: blur(8px);
-    transition: $transition;
-    will-change: transform;
+
 
     &.scroll {
         position: fixed;
@@ -141,7 +140,7 @@ header {
                     width: 0;
                     height: 100%;
                     background: $colorGrey;
-                    transition: $transition;
+                    transition: 0.4s cubic-bezier(0.075, 0.5, 0, 1) 1.2s;
                     will-change: transform;
                 }
 
